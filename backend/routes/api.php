@@ -18,6 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/', function () {
-   return response()->json([0 => 'Hello World']);
+Route::get('/clients', function () {
+    $clients = \App\Models\Client::all();
+   return response()->json($clients);
 });
