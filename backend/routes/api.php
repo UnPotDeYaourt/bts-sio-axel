@@ -22,3 +22,14 @@ Route::get('/clients', function () {
     $clients = \App\Models\Client::all();
    return response()->json($clients);
 });
+
+Route::post('/clients/create', function (Request $request) {
+    \App\Models\Activite::create([
+        'nom' => 'test',
+        'date' => Now(),
+        'description' => 'dsgzdgdzdd',
+        'client_id' => 15,
+    ]);
+
+    return response(200)->json(['success' => 'C bon ça marche']);
+});
